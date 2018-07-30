@@ -11,10 +11,8 @@ import "./Style.css";
         reEnterEmail:!values.email ? 'this field is required':undefined,
         address1:!values.address1 ? 'this field is required':undefined,
         city:!values.city ? 'this field is required':undefined,
-        address1:!values.address1 ? 'this field is required':undefined,
         address2:!values.address2 ? 'this field is required':undefined,
         state:!values.state ? 'this field is required':undefined,
-        city:!values.city ? 'this field is required':undefined,
         country:!values.country ? 'this field is required':undefined,
         zip:!values.zip ? 'this field is required':undefined,
         howDidYouHear:!values.howDidYouHear ? 'this field is required':undefined
@@ -104,8 +102,7 @@ const reduxFormpersonal=reduxForm({
     return {
          personal: state,
          personalformErrors: getFormSyncErrors('PersonalForm')(state),
-        //  destroyOnUnmount: false,
-        //  forceUnregisterOnUnmount: true,
+        
     }
   }
   export default connect(mapStateToProps)(reduxFormpersonal)

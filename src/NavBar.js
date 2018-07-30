@@ -6,6 +6,7 @@ import Header from './Header';
   
 import {
   BrowserRouter as Router,
+  HashRouter,
   NavLink,
   Route,
   Switch,
@@ -14,7 +15,7 @@ import {
 const NavBar = (props) => {
   return (
     <div >
-      <Router>
+      <HashRouter>
         <div className="container">
         <ul className="header">
                <li className='navBar'><NavLink exact activeStyle ={{color:'orange'}} to="/Header">Home</NavLink></li>
@@ -23,13 +24,14 @@ const NavBar = (props) => {
                <li className='navBar'><NavLink exact activeStyle ={{color:'orange'}} to="/Portfolio">Portfolio</NavLink></li> 
            </ul>          
             <Switch>
+             <Route exact path="/" render={()=>(<Header />)}/>
              <Route exact path="/Header" render={()=>(<Header />)}/>
              <Route exact path="/Personal" render={()=>(<Personal  onSubmit={values => {console.log('values', values);}}/>)}/>
              <Route exact path="/SkillsLocation" render={()=>(<SkillsLocation />)} /> 
              <Route exact path="/Portfolio" render={()=>(<Portfolio />)} />
           </Switch>
         </div>
-      </Router>
+      </HashRouter>
     </div>
   );
 };
